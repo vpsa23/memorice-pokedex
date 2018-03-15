@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 /* COMPONENTS*/
-import title from './components/Welcome/title';
+import Welcome from './components/Welcome/index';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <title />
+        <Welcome />
       </div>
     );
   }

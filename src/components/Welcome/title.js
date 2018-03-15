@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
-import './style.css';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 
-class title extends Component {
-  render () {
-    return (
-      <div className="hola">HOLAAAA!</div>
-    )
-  }
-}
+const Title = () => (
+  <div>
+    <h1>Memorice Pokemon</h1>
+  </div>
+);
 
 
-export default title;
+export default Title;
