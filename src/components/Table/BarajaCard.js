@@ -1,9 +1,9 @@
 import shuffle from 'lodash.shuffle';
 import FontAwesomeClasses from './fontAwesomeClass';
 
-const NUMBER_OF_CARDS = 12;
+const NUMBER_OF_CARDS = 10;
 
-export default () =>  {
+export default () => {
   //console.log(FontAwesomeClasses);
   const fontAwesomeClass = FontAwesomeClasses();
   let cards = [];
@@ -20,4 +20,3 @@ export default () =>  {
   }
 
   return shuffle(card);
-};
