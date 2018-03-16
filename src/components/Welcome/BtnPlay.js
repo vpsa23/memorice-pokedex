@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 class BtnPlay extends Component {
   render() {
     return(
-      <div>
-        <button>Start Play</button>
+      <div className='btnPlay'>
+        <button onClick="">Start Play</button>
       </div>
     )
   }

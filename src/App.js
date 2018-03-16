@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import './App.css';
 
 /* COMPONENTS*/
-import Welcome from './components/Welcome/index';
+import ContainerWelcome from './containers/ContainerWelcome';
+import ContainerTable from './containers/ContainerTable';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Welcome />
+        <ContainerWelcome />
       </div>
     );
   }

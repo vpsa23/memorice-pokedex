@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 const Title = () => (
-  <div>
+  <div className='title'>
     <h1>Memorice Pokemon</h1>
   </div>
 );
