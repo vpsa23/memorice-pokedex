@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 //import PropTypes from 'prop-types';
-import Title from './Title';
-import BtnPlay from './BtnPlay';
+import Card from './Card';
+import Targets from './Targets';
 //import 'style.css';
 
 
-class Welcome extends Component {
+class Table extends Component {
   render() {
     return(
       <div>
-        <Title />
-        <BtnPlay />
+        <Card />
+        <Targets />
       </div>
     )
   }
 }
 
-export default Welcome;
+export default Table;
