@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 import store from './store';
 // nuestros componentes de React para la App y las vistas
 import ContainerWelcome from './containers/ContainerWelcome';
-import ContainerTable from './containers/ContainerTable';
+//import ContainerTable from './containers/ContainerTable';
 
 // sincronizamos el browserHistory de React Router con el Store
 //const history = syncHistoryWithStore(browserHistory, store);

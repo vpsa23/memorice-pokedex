@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Count = () => (
   <div className='count'>
-    Intentos: {this.props.numeroDeIntentos}
+    Intentos: 0.
   </div>
 );
 

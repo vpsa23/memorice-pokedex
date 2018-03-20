@@ -1,37 +1,75 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Count from './../Nav/Count';
-import Logo from './../Nav/Logo';
+import firebase, { auth, provider } from './../../firebase';
+import { Grid, Row, Col } from 'react-bootstrap';
+import ContainerTable from './../../containers/ContainerTable';
 //import Targets from './../Table/Targets';
 
 
 
 class BtnPlay extends Component {
-  constructor(props){
+  constructor() {
     super();
     this.state = {
-      showComponent: false,
+      user: null // <-- usuario comience vacio
     }
+    this.login = this.login.bind(this); // <-- add this line
+    this.logout = this.logout.bind(this); // <-- add this line
   }
 
-  btnClick = () => {
-    console.log('holi');
-    alert('helo');
-    return(
-      <div>
-        <Count />
-        <Logo />
-      </div>
-    )
+  logout() {
+    auth.signOut()
+      .then(() => {
+        this.setState({
+          user: null
+        });
+      });
   }
 
+
+  login() {
+    auth.signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        this.setState({
+          user
+        });
+    });
+  }
+
+  componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      }
+    });
+  }
 
   render() {
-    return(
+    return (
       <div className='btnPlay'>
-        <button onClick={this.btnClick}>Start PLay</button>
+        <header>
+          <div className="show-grid">
+            {this.state.user ?
+                <button onClick={this.logout}>Logout</button>
+                :
+                <button onClick={this.login}>Log In</button>
+            }
+          </div>
+        </header>
+        {this.state.user ?
+          <div>
+            <div className='user-profile'>
+              <img src={this.state.user.photoURL} />
+            </div>
+          </div>
+          :
+          <div className='wrapper'>
+            <p>¡Ven y Juega!</p>
+          </div>
+        }
       </div>
-    )
+    );
   }
 }
 
